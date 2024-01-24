@@ -37,7 +37,7 @@ jobs:
 
       - name: run from DMS_DM
         run: |
-            python ${{ runner.workspace }}/Schemachange_build.py -f ${{ runner.workspace }}/10_DMS_DM -a $SF_ACCOUNT -u $SF_USERNAME --authentication-parameter snowflake -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c DEV.SCHEMACHANGE.CHANGE_HISTORY_DEV --vars {\"ENV_DATABASE_NAME\":\"DEV\"} -ac -v --schema-name-parameter DMS_DM --query-tag DMS_Deployment
+            python DEV/Schemachange_build.py -f ${{ runner.workspace }}/10_DMS_DM -a $SF_ACCOUNT -u $SF_USERNAME --authentication-parameter snowflake -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c DEV.SCHEMACHANGE.CHANGE_HISTORY_DEV --vars {\"ENV_DATABASE_NAME\":\"DEV\"} -ac -v --schema-name-parameter DMS_DM --query-tag DMS_Deployment
       
       - name: run from EBS_DM
         run: |      
